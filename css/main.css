@@ -195,7 +195,7 @@ tbody tr:hover {
 }
 .logoImage {
   width: 100px;
-  height: 50px;
+  height: 100px;
 }
 .icon {
   color: #9b52c5;
@@ -280,11 +280,14 @@ tbody tr:hover {
   .column4,
   .column5,
   .column6,
-  .column1,
   .column2,
   .column3 {
     width: 100%;
   }
+
+    .column1 {
+      width:10%;
+    }
 
   tbody tr {
     font-size: 14px;
@@ -314,4 +317,8 @@ tbody tr:hover {
 }
 .form-control {
   border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+
+table tbody tr {
+    height: 130px;
 }

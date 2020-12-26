@@ -139,7 +139,8 @@ table * {
 }
 table td,
 table th {
-  padding-left: 8px;
+  padding-left: 20px;
+  padding-right: 5px;
 }
 table thead tr {
   height: 60px;
@@ -195,7 +196,7 @@ tbody tr:hover {
 }
 .logoImage {
   width: 100px;
-  height: 100px;
+  height: 50px;
 }
 .icon {
   color: #9b52c5;
@@ -211,7 +212,8 @@ tbody tr:hover {
   display: flex;
   flex-direction: column;
 }
-@media screen and (max-width: 992px) {
+
+@media screen and (max-width: 1024px) {
   table {
     display: block;
   }
@@ -227,6 +229,7 @@ tbody tr:hover {
   table tbody tr {
     height: auto;
     padding: 37px 0;
+    overflow: scroll;
   }
   table tbody tr td {
     padding-left: 40% !important;
@@ -280,14 +283,11 @@ tbody tr:hover {
   .column4,
   .column5,
   .column6,
+  .column1,
   .column2,
   .column3 {
     width: 100%;
   }
-
-    .column1 {
-      width:10%;
-    }
 
   tbody tr {
     font-size: 14px;
@@ -317,8 +317,4 @@ tbody tr:hover {
 }
 .form-control {
   border: 1px solid rgba(0, 0, 0, 0.15) !important;
-}
-
-table tbody tr {
-    height: 130px;
 }

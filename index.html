@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Table V01</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/bootstrap/css/bootstrap.min.css"
+    />
+	<link
+	href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css"
+	rel="stylesheet"
+  />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/select2/select2.min.css"
+    />
+    <!--===============================================================================================-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="vendor/perfect-scrollbar/perfect-scrollbar.css"
+    />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css"
+  />
+    <!--===============================================================================================-->
+  </head>
+  <body>
+    <div class="limiter">
+      <div class="container-table100">
+        <div class="wrap-table100">
+          <div class="add">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-toggle="modal"
+              data-target="#exampleModalCenter"
+            >
+              Add
+            </button>
+          </div>
+          <div class="table100">
+            <table>
+              <thead>
+                <tr class="table100-head">
+                  <th class="column1">Logo</th>
+                  <th class="column1">Name</th>
+                  <th class="column2">Date</th>
+                  <th class="column3">URL</th>
+                  <th class="column3">Author</th>
+                  <th class="column4">Problem</th>
+                  <th class="column5">Summary</th>
+                  <th class="column6">Action</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+               
+               
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal of Add data-->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+              Please enter your data
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="addForm">
+              <div class="form-group">
+                <label for="exampleFormControlFile1">Logo</label>
+                <input
+                  type="file"
+                  class="form-control-file"
+                  accept="image/gif, image/jpeg, image/png"
+				  name="image"
+				  required
+                  id="file"
+                  id="Logoimage"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+				  id="name"
+				  required
+                  aria-describedby="emailHelp"
+                  placeholder="Enter Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Url</label>
+                <input
+                  type="url"
+                  class="form-control"
+				  id="url"
+				  required
+                  aria-describedby="emailHelp"
+                  placeholder="Enter url"
+                />
+			  </div>
+			  <div class="form-group">
+                <label for="exampleInputEmail1">Author</label>
+                <input
+                  type="text"
+                  class="form-control"
+				  id="author"
+				  required
+                  aria-describedby="emailHelp"
+                  placeholder="Enter Author name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Problem Title</label>
+                <input
+                  type="text"
+                  class="form-control"
+				  id="problemtitle"
+				  required
+                  aria-describedby="emailHelp"
+                  placeholder="Enter Problem title"
+                />
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Project Summary</label>
+                <textarea class="form-control" required id="summary" rows="3"></textarea>
+              </div>
+            
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="submit" class="btn btn-primary">Add</button>
+		  </div>
+		</form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal of edit data -->
+    <div
+    class="modal fade"
+    id="EditDataModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">
+            Please Edit required Info
+          </h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="editform">
+            <div class="form-group editFromgroupImages">
+              <label for="exampleFormControlFile1">Logo</label>
+              <img class="editLogoImage" id="editLogoImAGE"/>
+              <input
+                type="file"
+                class="form-control-file"
+                accept="image/gif, image/jpeg, image/png"
+        name="image"
+        required
+                id="editfile"
+                id="Logoimage"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+              <input
+                type="text"
+                class="form-control"
+        id="editname"
+        required
+                aria-describedby="emailHelp"
+                placeholder="Enter Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Url</label>
+              <input
+                type="url"
+                class="form-control"
+        id="editurl"
+        required
+                aria-describedby="emailHelp"
+                placeholder="Enter url"
+              />
+      </div>
+      <div class="form-group">
+              <label for="exampleInputEmail1">Author</label>
+              <input
+                type="text"
+                class="form-control"
+        id="editauthor"
+        required
+                aria-describedby="emailHelp"
+                placeholder="Enter Author name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Problem Title</label>
+              <input
+                type="text"
+                class="form-control"
+        id="editproblemtitle"
+        required
+                aria-describedby="emailHelp"
+                placeholder="Enter Problem title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Project Summary</label>
+              <textarea class="form-control" required id="editsummary" rows="3"></textarea>
+            </div>
+          
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+    </div>
+  </form>
+      </div>
+    </div>
+  </div>
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+	<script src="js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+	  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-storage.js"></script>
+	 <script>
+		// Your web app's Firebase configuration
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		var firebaseConfig = {
+		  apiKey: "AIzaSyAJJaBAP77PiWFMES1r3aS8Be3cWf37g0E",
+		  authDomain: "project-master-54d3d.firebaseapp.com",
+		  projectId: "project-master-54d3d",
+		  atabaseURL: "https://project-master-54d3d-default-rtdb.firebaseio.com",
+		  storageBucket: "project-master-54d3d.appspot.com",
+		  messagingSenderId: "249224145983",
+		  appId: "1:249224145983:web:0157b4e80108b014e49c8a",
+		  measurementId: "G-YS0PJEWKZ3"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+		firebase.analytics();
+	  </script>
+	   <!--===============================================================================================-->
+	 <script src="js/SaveNewRecord.js"></script>
+   <script src="js/showTables.js"></script>
+  
+	</body>
+  </body>
+</html>
